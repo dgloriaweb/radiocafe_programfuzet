@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radiocafé Műsorprogram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #764ba2;
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1rem;
+        }
+
+        .days-container {
+            display: grid;
+            gap: 20px;
+        }
+
+        .day-section {
+            background: white;
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .day-title {
+            font-size: 1.5rem;
+            color: #764ba2;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+
+        .show-card {
+            background: #f8f9fa;
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .show-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .show-time {
+            font-weight: bold;
+            color: #764ba2;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .show-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .show-presenters {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 8px;
+        }
+
+        .show-description {
+            color: #555;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 8px;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            margin-left: 8px;
+            font-weight: 600;
+        }
+
+        .badge-live {
+            background: #28a745;
+            color: white;
+        }
+
+        .badge-podcast {
+            background: #ff6b6b;
+            color: white;
+        }
+
+        .no-shows {
+            color: #999;
+            font-style: italic;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+
+            header {
+                padding: 20px;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .day-section {
+                padding: 15px;
+            }
+
+            .day-title {
+                font-size: 1.3rem;
+            }
+
+            .show-title {
+                font-size: 1.1rem;
+            }
+
+            .show-time {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.3rem;
+            }
+
+            .subtitle {
+                font-size: 0.9rem;
+            }
+
+            .show-card {
+                padding: 12px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Radiocafé Műsorprogram</h1>
+            <p class="subtitle">Hétfőtől péntekig</p>
+        </header>
+
+        <div class="days-container" id="schedule"></div>
+    </div>
+
+    <script>
+        const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+        const dayNames = {
+            'Monday': 'Hétfő',
+            'Tuesday': 'Kedd',
+            'Wednesday': 'Szerda',
+            'Thursday': 'Csütörtök',
+            'Friday': 'Péntek'
+        };
+
+        async function loadSchedule() {
+            try {
+                const response = await fetch('radiocafe_shows.json');
+                const shows = await response.json();
+                
+                const scheduleContainer = document.getElementById('schedule');
+                
+                days.forEach(day => {
+                    const daySection = document.createElement('div');
+                    daySection.className = 'day-section';
+                    
+                    const dayTitle = document.createElement('h2');
+                    dayTitle.className = 'day-title';
+                    dayTitle.textContent = dayNames[day];
+                    daySection.appendChild(dayTitle);
+                    
+                    const dayShows = [];
+                    
+                    shows.forEach(show => {
+                        show.broadcasts.forEach(broadcast => {
+                            if (broadcast.day === day && broadcast.is_main_air_time) {
+                                dayShows.push({
+                                    ...show,
+                                    time: broadcast.start_time,
+                                    endTime: broadcast.end_time,
+                                    isLive: broadcast.expected_live
+                                });
+                            }
+                        });
+                    });
+                    
+                    dayShows.sort((a, b) => {
+                        const timeA = a.time.split(':').map(Number);
+                        const timeB = b.time.split(':').map(Number);
+                        return (timeA[0] * 60 + timeA[1]) - (timeB[0] * 60 + timeB[1]);
+                    });
+                    
+                    if (dayShows.length === 0) {
+                        const noShows = document.createElement('div');
+                        noShows.className = 'no-shows';
+                        noShows.textContent = 'Nincs műsor ezen a napon';
+                        daySection.appendChild(noShows);
+                    } else {
+                        dayShows.forEach(show => {
+                            const showCard = document.createElement('div');
+                            showCard.className = 'show-card';
+                            
+                            const timeStr = show.endTime 
+                                ? `${show.time} - ${show.endTime}` 
+                                : show.time;
+                            
+                            let badges = '';
+                            if (show.isLive) {
+                                badges += '<span class="badge badge-live">ÉLŐ</span>';
+                            }
+                            if (show.is_podcast) {
+                                badges += '<span class="badge badge-podcast">PODCAST</span>';
+                            }
+                            
+                            const presenters = show.presenters && show.presenters.length > 0
+                                ? `<div class="show-presenters">Műsorvezetők: ${show.presenters.join(', ')}</div>`
+                                : '';
+                            
+                            showCard.innerHTML = `
+                                <div class="show-time">${timeStr}${badges}</div>
+                                <div class="show-title">${show.show}</div>
+                                ${presenters}
+                                <div class="show-description">${show.description_hu}</div>
+                            `;
+                            
+                            daySection.appendChild(showCard);
+                        });
+                    }
+                    
+                    scheduleContainer.appendChild(daySection);
+                });
+                
+            } catch (error) {
+                console.error('Hiba a műsorprogram betöltésekor:', error);
+                document.getElementById('schedule').innerHTML = 
+                    '<div class="day-section"><p class="no-shows">Hiba történt a műsorprogram betöltésekor.</p></div>';
+            }
+        }
+
+        loadSchedule();
+    </script>
+</body>
+</html>
