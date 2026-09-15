@@ -17,26 +17,61 @@ const dayNames = {
   Sunday: "Vasárnap",
 };
 
+function getBudapestNowParts(date = new Date()) {
+  const formatter = new Intl.DateTimeFormat("en-US", {
+    timeZone: "Europe/Budapest",
+    weekday: "long",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    hourCycle: "h23",
+  });
+
+  const parts = formatter.formatToParts(date);
+  const map = {};
+  for (const part of parts) {
+    if (part.type !== "literal") map[part.type] = part.value;
+  }
+
+  return {
+    weekday: map.weekday, // e.g. "Monday"
+    year: Number(map.year),
+    month: Number(map.month),
+    day: Number(map.day),
+    hour: Number(map.hour),
+    minute: Number(map.minute),
+  };
+}
+
 function isInOfflinePeriod(offlinePeriods) {
   if (!offlinePeriods || offlinePeriods.length === 0) return null;
 
-  const now = new Date();
-  const currentYear = now.getFullYear();
-  const currentMonth = now.getMonth() + 1;
-  const currentDay = now.getDate();
+  const nowParts = getBudapestNowParts();
+  const currentYear = nowParts.year;
+  const currentMonth = nowParts.month;
+  const currentDay = nowParts.day;
+  const currentKey = currentMonth * 100 + currentDay;
 
   for (const period of offlinePeriods) {
     const [fromMonth, fromDay] = period.from.split("-").map(Number);
     const [toMonth, toDay] = period.to.split("-").map(Number);
+    const fromKey = fromMonth * 100 + fromDay;
+    const toKey = toMonth * 100 + toDay;
 
-    const fromDate = new Date(currentYear, fromMonth - 1, fromDay);
-    const toDate = new Date(currentYear, toMonth - 1, toDay);
-    const currentDate = new Date(currentYear, currentMonth - 1, currentDay);
+    const wrapsYear = fromKey > toKey;
+    const inPeriod = wrapsYear
+      ? currentKey >= fromKey || currentKey <= toKey
+      : currentKey >= fromKey && currentKey <= toKey;
 
-    if (currentDate >= fromDate && currentDate <= toDate) {
+    if (inPeriod) {
+      const endYear = wrapsYear && currentKey >= fromKey ? currentYear + 1 : currentYear;
+      const endDateTime = `${endYear}-${String(toMonth).padStart(2, "0")}-${String(toDay).padStart(2, "0")} 23:59`;
+
       return {
         reason: period.reason,
-        endDate: `${currentYear}-${String(toMonth).padStart(2, "0")}-${String(toDay).padStart(2, "0")}`,
+        endDateTime,
       };
     }
   }
@@ -98,7 +133,7 @@ async function loadSchedule() {
 
           let badges = "";
           if (offlineInfo) {
-            badges += `<span class="badge badge-offline">${offlineInfo.reason} - ${offlineInfo.endDate}-ig</span>`;
+            badges += `<span class="badge badge-offline">${offlineInfo.reason} - ${offlineInfo.endDateTime}-ig</span>`;
           } else {
             if (show.isLive) {
               badges += '<span class="badge badge-live">ÉLŐ</span>';
@@ -208,11 +243,9 @@ function setupDayButtons() {
 }
 
 function updateNowPlaying() {
-  const now = new Date();
-  const currentDay = days[now.getDay() === 0 ? 6 : now.getDay() - 1];
-  const currentHour = now.getHours();
-  const currentMinute = now.getMinutes();
-  const currentTimeMinutes = currentHour * 60 + currentMinute;
+  const nowParts = getBudapestNowParts();
+  const currentDay = nowParts.weekday; // "Monday"..."Sunday" in Europe/Budapest time
+  const currentTimeMinutes = nowParts.hour * 60 + nowParts.minute;
 
   fetch("radiocafe_shows.json")
     .then((response) => response.json())
@@ -266,8 +299,7 @@ function updateNowPlaying() {
           ${presenters}
         `;
       } else {
-        content.innerHTML =
-          '<div class="now-playing-no-show">Jelenleg nincs élő műsor</div>';
+        content.innerHTML = '<div class="now-playing-show">Zene</div>';
       }
     });
 }
