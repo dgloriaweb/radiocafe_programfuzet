@@ -32,17 +32,46 @@
             margin-bottom: 30px;
             text-align: center;
             border: 2px solid #ff6b35;
+            position: sticky;
+            top: 20px;
+            z-index: 100;
         }
 
         h1 {
             color: #ff6b35;
             font-size: 2rem;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
         }
 
-        .subtitle {
+        .day-selector {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .day-btn {
+            background: #1a1a1a;
             color: #ccc;
+            border: 2px solid #333;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
             font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .day-btn:hover {
+            background: #ff6b35;
+            color: #000;
+            border-color: #ff6b35;
+        }
+
+        .day-btn.active {
+            background: #ff6b35;
+            color: #000;
+            border-color: #ff6b35;
         }
 
         .days-container {
@@ -56,6 +85,7 @@
             padding: 25px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             border: 1px solid #333;
+            scroll-margin-top: 150px;
         }
 
         .day-title {
@@ -140,14 +170,25 @@
 
             header {
                 padding: 20px;
+                top: 10px;
             }
 
             h1 {
                 font-size: 1.5rem;
             }
 
+            .day-selector {
+                gap: 8px;
+            }
+
+            .day-btn {
+                padding: 8px 12px;
+                font-size: 0.9rem;
+            }
+
             .day-section {
                 padding: 15px;
+                scroll-margin-top: 180px;
             }
 
             .day-title {
@@ -172,6 +213,11 @@
                 font-size: 0.9rem;
             }
 
+            .day-btn {
+                padding: 8px 10px;
+                font-size: 0.85rem;
+            }
+
             .show-card {
                 padding: 12px;
             }
@@ -182,20 +228,31 @@
     <div class="container">
         <header>
             <h1>Radiocafé Műsorprogram</h1>
-            <p class="subtitle">Hétfőtől péntekig</p>
+            
+            <div class="day-selector">
+                <button class="day-btn" data-day="Monday">H</button>
+                <button class="day-btn" data-day="Tuesday">K</button>
+                <button class="day-btn" data-day="Wednesday">Sze</button>
+                <button class="day-btn" data-day="Thursday">Cs</button>
+                <button class="day-btn" data-day="Friday">P</button>
+                <button class="day-btn" data-day="Saturday">Szo</button>
+                <button class="day-btn" data-day="Sunday">V</button>
+            </div>
         </header>
 
         <div class="days-container" id="schedule"></div>
     </div>
 
     <script>
-        const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+        const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
         const dayNames = {
             'Monday': 'Hétfő',
             'Tuesday': 'Kedd',
             'Wednesday': 'Szerda',
             'Thursday': 'Csütörtök',
-            'Friday': 'Péntek'
+            'Friday': 'Péntek',
+            'Saturday': 'Szombat',
+            'Sunday': 'Vasárnap'
         };
 
         async function loadSchedule() {
@@ -208,6 +265,7 @@
                 days.forEach(day => {
                     const daySection = document.createElement('div');
                     daySection.className = 'day-section';
+                    daySection.id = `day-${day}`;
                     
                     const dayTitle = document.createElement('h2');
                     dayTitle.className = 'day-title';
@@ -274,12 +332,69 @@
                     
                     scheduleContainer.appendChild(daySection);
                 });
+
+                setupDayButtons();
                 
             } catch (error) {
                 console.error('Hiba a műsorprogram betöltésekor:', error);
                 document.getElementById('schedule').innerHTML = 
                     '<div class="day-section"><p class="no-shows">Hiba történt a műsorprogram betöltésekor.</p></div>';
             }
+        }
+
+        function setupDayButtons() {
+            const dayButtons = document.querySelectorAll('.day-btn');
+            let isUserScrolling = true;
+            
+            dayButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const targetDay = button.getAttribute('data-day');
+                    const targetSection = document.getElementById(`day-${targetDay}`);
+                    
+                    if (targetSection) {
+                        dayButtons.forEach(btn => btn.classList.remove('active'));
+                        button.classList.add('active');
+                        
+                        isUserScrolling = false;
+                        targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        
+                        setTimeout(() => {
+                            isUserScrolling = true;
+                        }, 1000);
+                    }
+                });
+            });
+
+            function updateActiveButton() {
+                if (!isUserScrolling) return;
+                
+                const sections = document.querySelectorAll('.day-section');
+                const scrollPosition = window.scrollY + 250;
+                
+                let currentSection = null;
+                
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionBottom = sectionTop + section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
+                        currentSection = section;
+                    }
+                });
+                
+                if (currentSection) {
+                    const day = currentSection.id.replace('day-', '');
+                    dayButtons.forEach(btn => {
+                        if (btn.getAttribute('data-day') === day) {
+                            dayButtons.forEach(b => b.classList.remove('active'));
+                            btn.classList.add('active');
+                        }
+                    });
+                }
+            }
+
+            window.addEventListener('scroll', updateActiveButton);
+            updateActiveButton();
         }
 
         loadSchedule();
