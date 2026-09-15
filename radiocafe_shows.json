@@ -1,686 +1,623 @@
 [
-    {
-        "show": "Millásreggeli - a gazdasági muppet show",
-        "presenters": [
-            "Ács Gábor",
-            "Gede Balázs",
-            "Kántor Endre",
-            "Mihálovits András"
-        ],
-        "description_hu": "Könnyed, közérthető gazdasági műsor friss gazdasági információkkal, valamint gasztronómiával, utazással, közlekedéssel, kultúrával és számos hétköznapi témával.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Monday",
-                "start_time": "06:00",
-                "end_time": "10:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Tuesday",
-                "start_time": "06:00",
-                "end_time": "10:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Wednesday",
-                "start_time": "06:00",
-                "end_time": "10:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Thursday",
-                "start_time": "06:00",
-                "end_time": "10:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Friday",
-                "start_time": "06:00",
-                "end_time": "10:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Saturday",
-                "start_time": "07:00",
-                "end_time": "10:00",
-                "is_main_air_time": false,
-                "expected_live": false
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Pontjókor! - Fényterápia",
-        "presenters": [
-            "Fehér Mariann"
-        ],
-        "description_hu": "Beszélgetések a hazai kulturális élet fontos és érdekes szereplőivel színházról, zenéről, életstílusról, pszichológiáról és az élet dolgairól.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Monday",
-                "start_time": "11:00",
-                "end_time": "12:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Tuesday",
-                "start_time": "11:00",
-                "end_time": "12:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Wednesday",
-                "start_time": "11:00",
-                "end_time": "12:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Thursday",
-                "start_time": "11:00",
-                "end_time": "12:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Friday",
-                "start_time": "11:00",
-                "end_time": "12:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Napközi - az ország leghallgatottabb gyerekrádiója",
-        "presenters": null,
-        "description_hu": "Gyerekrádió, amely játékos formában kapcsolja össze a múltat és a jövőt érdekes történetekkel és ismeretekkel.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Monday",
-                "start_time": "15:15",
-                "end_time": "15:45",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Tuesday",
-                "start_time": "15:15",
-                "end_time": "15:45",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Wednesday",
-                "start_time": "15:15",
-                "end_time": "15:45",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Thursday",
-                "start_time": "15:15",
-                "end_time": "15:45",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Friday",
-                "start_time": "15:15",
-                "end_time": "15:45",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Kávézó a világ végén",
-        "presenters": [
-            "McMenemy Márk",
-            "Marvin"
-        ],
-        "description_hu": "Útkereső és jövőkutató magazin fenntarthatóságról, technológiákról, hírekről és egy szebb, fenntarthatóbb jövő lehetőségeiről.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Monday",
-                "start_time": "16:00",
-                "end_time": "18:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Saturday",
-                "start_time": "09:00",
-                "end_time": "11:00",
-                "is_main_air_time": false,
-                "expected_live": false
-            }
-        ],
-        "offline_periods": [
-            {
-                "from": "06-01",
-                "to": "08-31",
-                "reason": "nyári szünet"
-            }
-        ]
-    },
-    {
-        "show": "Womanpower",
-        "presenters": [
-            "Kutasi Judit"
-        ],
-        "description_hu": "Portréműsor karrierről, vezetői és emberi kihívásokról, sikerekről és kudarcokról, inspiráló üzleti és civil történetekkel.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Tuesday",
-                "start_time": "16:00",
-                "end_time": "18:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods":   [{
-            "from": "06-01",
-            "to": "09-31",
-            "reason": "nyári szünet"
-        }]
-    },
-    {
-        "show": "Hellojárat",
-        "presenters": [
-            "Nesta",
-            "Winkler Nóra"
-        ],
-        "description_hu": "Az urbánus és vidéki kultúra határán mozgó műsor művészetről, agráriumról, zenéről, életről és gyerekekről.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Wednesday",
-                "start_time": "16:00",
-                "end_time": "18:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Sajátos Pogátsa",
-        "presenters": [
-            "Pogátsa Zoltán",
-            "Kántor Endre"
-        ],
-        "description_hu": "Gazdasági és társadalmi kérdéseket vizsgáló műsor alternatív közgazdasági nézőpontokkal és konstruktív vitákkal.",
-        "is_podcast": true,
-        "broadcasts": [
-            {
-                "day": "Thursday",
-                "start_time": "16:00",
-                "end_time": "17:00",
-                "is_main_air_time": true,
-                "expected_live": false
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Megmondtuk előre…",
-        "presenters": [
-            "Kapitány Iván",
-            "Hevér Gábor"
-        ],
-        "description_hu": "Kötetlen kulturális beszélgetések színházról, filmről, könyvkiadásról, gasztronómiáról, televízióról és az élet érdekes történeteiről.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Thursday",
-                "start_time": "17:00",
-                "end_time": "18:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Kettes számrendszer",
-        "presenters": [
-            "Behumi Dóra",
-            "Veress Dóra"
-        ],
-        "description_hu": "Kulturális beszélgetések a kulturális élet kiemelkedő férfi szereplőivel, könnyed és beszélgetős stílusban.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Friday",
-                "start_time": "16:00",
-                "end_time": "18:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Business Lounge",
-        "presenters": [
-            "Kutasi Judit"
-        ],
-        "description_hu": "Könnyed, közérthető beszélgetések marketingről, médiáról, kommunikációról és üzleti stratégiáról.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Wednesday",
-                "start_time": "14:00",
-                "end_time": "15:00",
-                "is_main_air_time": true,
-                "expected_live": true,
-                "frequency": "biweekly"
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Kultúrali",
-        "presenters": [
-            "Paár Julcsi",
-            "Mezei Dániel"
-        ],
-        "description_hu": "Formabontó kulturális műsor, amely egy-egy témát sok különböző szempontból jár körül.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Friday",
-                "start_time": "20:00",
-                "end_time": "21:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Mini Starsky és Hát Jazz Klub",
-        "presenters": [
-            "Zsuffa Péter"
-        ],
-        "description_hu": "Jazzműsor Zsuffa Péterrel, a Starsky és Hát Jazz Klub folytatása.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Sunday",
-                "start_time": "22:00",
-                "end_time": "23:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Filmszerész",
-        "presenters": [
-            "Kovács Gellért",
-            "Urbán Szabolcs"
-        ],
-        "description_hu": "Heti mozimagazin moziról, streamingről és időnként színházról.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Thursday",
-                "start_time": "14:00",
-                "end_time": "15:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Epic Stories",
-        "presenters": [
-            "Dojcsák Dániel"
-        ],
-        "description_hu": "Üzleti beszélgetések vállalati vezetőkkel és szakértőkkel valódi szakmai és személyes történetekről, döntésekről, hibákról, sikerekről és újrakezdésekről.",
-        "is_podcast": true,
-        "broadcasts": [
-            {
-                "day": "Thursday",
-                "start_time": "21:00",
-                "end_time": "22:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Egészségkód",
-        "presenters": [
-            "Kutasi Judit",
-            "Kovács Róbert"
-        ],
-        "description_hu": "Egészségügyi magazin az egészséges életmódról, egészségtudatosságról, megelőzésről és a testi-lelki egyensúlyról.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Thursday",
-                "start_time": "18:00",
-                "end_time": "19:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Creative Survivor",
-        "presenters": [
-            "Oláh Andrea"
-        ],
-        "description_hu": "Magyar kutatókról, korszakalkotó felfedezésekről, kreatív megoldásokról, tudományról és innovációról szóló műsor a mesterséges intelligencia korában.",
-        "is_podcast": true,
-        "broadcasts": [
-            {
-                "day": "Monday",
-                "start_time": "13:15",
-                "end_time": null,
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Okosutas",
-        "presenters": [
-            "Ács Gábor",
-            "F. Szabó Emese",
-            "Gede Balázs"
-        ],
-        "description_hu": "Utazási műsor friss információkkal, hasznos tanácsokkal, tippekkel és átgondolt ajánlatokkal az okos és gazdaságos utazáshoz.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Tuesday",
-                "start_time": "20:00",
-                "end_time": "21:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Sunday",
-                "start_time": "08:00",
-                "end_time": "09:00",
-                "is_main_air_time": false,
-                "expected_live": false
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Borravaló",
-        "presenters": [
-            "Kántor Endre"
-        ],
-        "description_hu": "Gasztrokulturális magazin borokról, sörökről, párlatokról, kávéról és ételekről, valamint azok kulturális hátteréről.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Tuesday",
-                "start_time": "21:00",
-                "end_time": "22:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Sunday",
-                "start_time": "09:00",
-                "end_time": "10:00",
-                "is_main_air_time": false,
-                "expected_live": false
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Enyhe katarzis",
-        "presenters": [
-            "Szatmári Róbert"
-        ],
-        "description_hu": "Formabontó beszélgetős műsor a klasszikus zenéről, új szempontokkal és a művészet különböző területeinek szereplőivel.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Monday",
-                "start_time": "21:00",
-                "end_time": "22:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Soul Session",
-        "presenters": [
-            "Bogyó Tamás"
-        ],
-        "description_hu": "Élő soul és funky műsor a 70-es és a korai 80-as évek zenéivel, kizárólag eredeti vinylekről.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Saturday",
-                "start_time": "18:00",
-                "end_time": "20:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Dzsungelharc",
-        "presenters": [
-            "Rétalji Igor"
-        ],
-        "description_hu": "Vállalkozásokkal és az őket működtető emberi energiával foglalkozó műsor életutakról, ambíciókról, piaci harcról és megoldásokról.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Thursday",
-                "start_time": "20:00",
-                "end_time": "21:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Egyéletem",
-        "presenters": [
-            "Babik Edit"
-        ],
-        "description_hu": "Utazásról, gasztronómiáról, rekreációról és wellbeingről szóló műsor a kultúrák találkozásáról.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Friday",
-                "start_time": "14:00",
-                "end_time": "15:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Könyvben utazom / Életreszóló könyvek",
-        "presenters": [
-            "Oláh Andrea"
-        ],
-        "description_hu": "Könyvajánlók és könyves beszélgetések írókkal, műfordítókkal, szerkesztőkkel és a könyvpiac újdonságairól.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Monday",
-                "start_time": "15:05",
-                "end_time": null,
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Tuesday",
-                "start_time": "15:05",
-                "end_time": null,
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Wednesday",
-                "start_time": "15:05",
-                "end_time": null,
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Thursday",
-                "start_time": "15:05",
-                "end_time": null,
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Friday",
-                "start_time": "15:05",
-                "end_time": null,
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "iFater",
-        "presenters": [
-            "Fekete Gábor",
-            "Pápai Péter"
-        ],
-        "description_hu": "Technológiáról, AI-ról, kütyükről és a 21. század érdekes kérdéseiről beszélgető műsor.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Wednesday",
-                "start_time": "21:00",
-                "end_time": "22:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "PartCafé - A Balaton hangja",
-        "presenters": null,
-        "description_hu": "A Balatonhoz kapcsolódó aktuális témákat, folyamatokat és történéseket bemutató műsor, hétvégi programajánlókkal.",
-        "is_podcast": null,
-        "broadcasts": [],
-        "offline_periods": null
-    },
-    {
-        "show": "Közelebb a matematikához",
-        "presenters": [
-            "Oláh Andrea"
-        ],
-        "description_hu": "A matematika mindennapi jelentőségéről és a matematikai kutatások gyakorlati hatásairól szóló műsor.",
-        "is_podcast": true,
-        "broadcasts": [
-            {
-                "day": "Monday",
-                "start_time": "13:15",
-                "end_time": "14:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Talponálló",
-        "presenters": [
-            "Gulyás Luca",
-            "Farkas Peti",
-            "Kovács Zoli"
-        ],
-        "description_hu": "A magyar zeneipart, közéleti és érdekes témákat, valamint hazai szereplőkkel készült közvetlen interjúkat bemutató műsor.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Monday",
-                "start_time": "18:00",
-                "end_time": "20:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            },
-            {
-                "day": "Friday",
-                "start_time": "18:00",
-                "end_time": "20:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Százhold",
-        "presenters": [
-            "Veiszer Alinda"
-        ],
-        "description_hu": "Gyerek- és ifjúsági irodalommal, kultúrával, filmekkel, színházzal, kiállításokkal és gyerekneveléssel foglalkozó műsor.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Friday",
-                "start_time": "21:00",
-                "end_time": "22:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    },
-    {
-        "show": "Tandem",
-        "presenters": [
-            "Balázsy Panna"
-        ],
-        "description_hu": "Független színházzal, alternatív színházi világgal, előadóművészekkel és produkciókkal foglalkozó műsor.",
-        "is_podcast": false,
-        "broadcasts": [
-            {
-                "day": "Wednesday",
-                "start_time": "20:00",
-                "end_time": "21:00",
-                "is_main_air_time": true,
-                "expected_live": true
-            }
-        ],
-        "offline_periods": null
-    }
+  {
+    "show": "Millásreggeli - a gazdasági muppet show",
+    "presenters": [
+      "Ács Gábor",
+      "Gede Balázs",
+      "Kántor Endre",
+      "Mihálovits András"
+    ],
+    "description_hu": "Könnyed, közérthető gazdasági műsor friss gazdasági információkkal, valamint gasztronómiával, utazással, közlekedéssel, kultúrával és számos hétköznapi témával.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Monday",
+        "start_time": "06:00",
+        "end_time": "10:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Tuesday",
+        "start_time": "06:00",
+        "end_time": "10:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Wednesday",
+        "start_time": "06:00",
+        "end_time": "10:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Thursday",
+        "start_time": "06:00",
+        "end_time": "10:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Friday",
+        "start_time": "06:00",
+        "end_time": "10:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Saturday",
+        "start_time": "07:00",
+        "end_time": "10:00",
+        "is_main_air_time": false,
+        "expected_live": false
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Pontjókor! - Fényterápia",
+    "presenters": ["Fehér Mariann"],
+    "description_hu": "Beszélgetések a hazai kulturális élet fontos és érdekes szereplőivel színházról, zenéről, életstílusról, pszichológiáról és az élet dolgairól.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Monday",
+        "start_time": "11:00",
+        "end_time": "12:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Tuesday",
+        "start_time": "11:00",
+        "end_time": "12:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Wednesday",
+        "start_time": "11:00",
+        "end_time": "12:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Thursday",
+        "start_time": "11:00",
+        "end_time": "12:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Friday",
+        "start_time": "11:00",
+        "end_time": "12:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Napközi - az ország leghallgatottabb gyerekrádiója",
+    "presenters": null,
+    "description_hu": "Gyerekrádió, amely játékos formában kapcsolja össze a múltat és a jövőt érdekes történetekkel és ismeretekkel.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Monday",
+        "start_time": "15:15",
+        "end_time": "15:45",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Tuesday",
+        "start_time": "15:15",
+        "end_time": "15:45",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Wednesday",
+        "start_time": "15:15",
+        "end_time": "15:45",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Thursday",
+        "start_time": "15:15",
+        "end_time": "15:45",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Friday",
+        "start_time": "15:15",
+        "end_time": "15:45",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Kávézó a világ végén",
+    "presenters": ["McMenemy Márk", "Marvin"],
+    "description_hu": "Útkereső és jövőkutató magazin fenntarthatóságról, technológiákról, hírekről és egy szebb, fenntarthatóbb jövő lehetőségeiről.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Monday",
+        "start_time": "16:00",
+        "end_time": "18:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Saturday",
+        "start_time": "09:00",
+        "end_time": "11:00",
+        "is_main_air_time": false,
+        "expected_live": false
+      }
+    ],
+    "offline_periods": [
+      {
+        "from": "06-01",
+        "to": "08-31",
+        "reason": "nyári szünet"
+      }
+    ]
+  },
+  {
+    "show": "Womanpower",
+    "presenters": ["Kutasi Judit"],
+    "description_hu": "Portréműsor karrierről, vezetői és emberi kihívásokról, sikerekről és kudarcokról, inspiráló üzleti és civil történetekkel.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Tuesday",
+        "start_time": "16:00",
+        "end_time": "18:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": [
+      {
+        "from": "06-01",
+        "to": "09-31",
+        "reason": "nyári szünet"
+      }
+    ]
+  },
+  {
+    "show": "Hellojárat",
+    "presenters": ["Nesta", "Winkler Nóra"],
+    "description_hu": "Az urbánus és vidéki kultúra határán mozgó műsor művészetről, agráriumról, zenéről, életről és gyerekekről.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Wednesday",
+        "start_time": "16:00",
+        "end_time": "18:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Sajátos Pogátsa",
+    "presenters": ["Pogátsa Zoltán", "Kántor Endre"],
+    "description_hu": "Gazdasági és társadalmi kérdéseket vizsgáló műsor alternatív közgazdasági nézőpontokkal és konstruktív vitákkal.",
+    "is_podcast": true,
+    "broadcasts": [
+      {
+        "day": "Thursday",
+        "start_time": "16:00",
+        "end_time": "17:00",
+        "is_main_air_time": true,
+        "expected_live": false
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Megmondtuk előre…",
+    "presenters": ["Kapitány Iván", "Hevér Gábor"],
+    "description_hu": "Kötetlen kulturális beszélgetések színházról, filmről, könyvkiadásról, gasztronómiáról, televízióról és az élet érdekes történeteiről.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Thursday",
+        "start_time": "17:00",
+        "end_time": "18:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Kettes számrendszer",
+    "presenters": ["Behumi Dóra", "Veress Dóra"],
+    "description_hu": "Kulturális beszélgetések a kulturális élet kiemelkedő férfi szereplőivel, könnyed és beszélgetős stílusban.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Friday",
+        "start_time": "16:00",
+        "end_time": "18:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Business Lounge",
+    "presenters": ["Kutasi Judit"],
+    "description_hu": "Könnyed, közérthető beszélgetések marketingről, médiáról, kommunikációról és üzleti stratégiáról.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Wednesday",
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "is_main_air_time": true,
+        "expected_live": true,
+        "frequency": "biweekly"
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Kultúrali",
+    "presenters": ["Paár Julcsi", "Mezei Dániel"],
+    "description_hu": "Formabontó kulturális műsor, amely egy-egy témát sok különböző szempontból jár körül.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Friday",
+        "start_time": "20:00",
+        "end_time": "21:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Mini Starsky és Hát Jazz Klub",
+    "presenters": ["Zsuffa Péter"],
+    "description_hu": "Jazzműsor Zsuffa Péterrel, a Starsky és Hát Jazz Klub folytatása.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Sunday",
+        "start_time": "22:00",
+        "end_time": "23:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Filmszerész",
+    "presenters": ["Kovács Gellért", "Urbán Szabolcs"],
+    "description_hu": "Heti mozimagazin moziról, streamingről és időnként színházról.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Thursday",
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Epic Stories",
+    "presenters": ["Dojcsák Dániel"],
+    "description_hu": "Üzleti beszélgetések vállalati vezetőkkel és szakértőkkel valódi szakmai és személyes történetekről, döntésekről, hibákról, sikerekről és újrakezdésekről.",
+    "is_podcast": true,
+    "broadcasts": [
+      {
+        "day": "Thursday",
+        "start_time": "21:00",
+        "end_time": "22:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Egészségkód",
+    "presenters": ["Kutasi Judit", "Kovács Róbert"],
+    "description_hu": "Egészségügyi magazin az egészséges életmódról, egészségtudatosságról, megelőzésről és a testi-lelki egyensúlyról.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Thursday",
+        "start_time": "18:00",
+        "end_time": "19:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Creative Survivor",
+    "presenters": ["Oláh Andrea"],
+    "description_hu": "Magyar kutatókról, korszakalkotó felfedezésekről, kreatív megoldásokról, tudományról és innovációról szóló műsor a mesterséges intelligencia korában.",
+    "is_podcast": true,
+    "broadcasts": [
+      {
+        "day": "Monday",
+        "start_time": "13:15",
+        "end_time": null,
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Okosutas",
+    "presenters": ["Ács Gábor", "F. Szabó Emese", "Gede Balázs"],
+    "description_hu": "Utazási műsor friss információkkal, hasznos tanácsokkal, tippekkel és átgondolt ajánlatokkal az okos és gazdaságos utazáshoz.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Tuesday",
+        "start_time": "20:00",
+        "end_time": "21:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Sunday",
+        "start_time": "08:00",
+        "end_time": "09:00",
+        "is_main_air_time": false,
+        "expected_live": false
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Borravaló",
+    "presenters": ["Kántor Endre"],
+    "description_hu": "Gasztrokulturális magazin borokról, sörökről, párlatokról, kávéról és ételekről, valamint azok kulturális hátteréről.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Tuesday",
+        "start_time": "21:00",
+        "end_time": "22:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Sunday",
+        "start_time": "09:00",
+        "end_time": "10:00",
+        "is_main_air_time": false,
+        "expected_live": false
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Enyhe katarzis",
+    "presenters": ["Szatmári Róbert"],
+    "description_hu": "Formabontó beszélgetős műsor a klasszikus zenéről, új szempontokkal és a művészet különböző területeinek szereplőivel.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Monday",
+        "start_time": "21:00",
+        "end_time": "22:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Soul Session",
+    "presenters": ["Bogyó Tamás"],
+    "description_hu": "Élő soul és funky műsor a 70-es és a korai 80-as évek zenéivel, kizárólag eredeti vinylekről.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Saturday",
+        "start_time": "18:00",
+        "end_time": "20:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Dzsungelharc",
+    "presenters": ["Rétalji Igor"],
+    "description_hu": "Vállalkozásokkal és az őket működtető emberi energiával foglalkozó műsor életutakról, ambíciókról, piaci harcról és megoldásokról.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Thursday",
+        "start_time": "20:00",
+        "end_time": "21:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Egyéletem",
+    "presenters": ["Babik Edit"],
+    "description_hu": "Utazásról, gasztronómiáról, rekreációról és wellbeingről szóló műsor a kultúrák találkozásáról.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Friday",
+        "start_time": "14:00",
+        "end_time": "15:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Könyvben utazom / Életreszóló könyvek",
+    "presenters": ["Oláh Andrea"],
+    "description_hu": "Könyvajánlók és könyves beszélgetések írókkal, műfordítókkal, szerkesztőkkel és a könyvpiac újdonságairól.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Monday",
+        "start_time": "15:05",
+        "end_time": null,
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Tuesday",
+        "start_time": "15:05",
+        "end_time": null,
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Wednesday",
+        "start_time": "15:05",
+        "end_time": null,
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Thursday",
+        "start_time": "15:05",
+        "end_time": null,
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Friday",
+        "start_time": "15:05",
+        "end_time": null,
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "iFater",
+    "presenters": ["Fekete Gábor", "Pápai Péter"],
+    "description_hu": "Technológiáról, AI-ról, kütyükről és a 21. század érdekes kérdéseiről beszélgető műsor.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Wednesday",
+        "start_time": "21:00",
+        "end_time": "22:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "PartCafé - A Balaton hangja",
+    "presenters": null,
+    "description_hu": "A Balatonhoz kapcsolódó aktuális témákat, folyamatokat és történéseket bemutató műsor, hétvégi programajánlókkal.",
+    "is_podcast": null,
+    "broadcasts": [],
+    "offline_periods": null
+  },
+  {
+    "show": "Közelebb a matematikához",
+    "presenters": ["Oláh Andrea"],
+    "description_hu": "A matematika mindennapi jelentőségéről és a matematikai kutatások gyakorlati hatásairól szóló műsor.",
+    "is_podcast": true,
+    "broadcasts": [
+      {
+        "day": "Monday",
+        "start_time": "13:15",
+        "end_time": "14:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Talponálló",
+    "presenters": ["Gulyás Luca", "Farkas Peti", "Kovács Zoli"],
+    "description_hu": "A magyar zeneipart, közéleti és érdekes témákat, valamint hazai szereplőkkel készült közvetlen interjúkat bemutató műsor.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Monday",
+        "start_time": "18:00",
+        "end_time": "20:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      },
+      {
+        "day": "Friday",
+        "start_time": "18:00",
+        "end_time": "20:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Százhold",
+    "presenters": ["Veiszer Alinda"],
+    "description_hu": "Gyerek- és ifjúsági irodalommal, kultúrával, filmekkel, színházzal, kiállításokkal és gyerekneveléssel foglalkozó műsor.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Friday",
+        "start_time": "21:00",
+        "end_time": "22:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  },
+  {
+    "show": "Tandem",
+    "presenters": ["Balázsy Panna"],
+    "description_hu": "Független színházzal, alternatív színházi világgal, előadóművészekkel és produkciókkal foglalkozó műsor.",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Wednesday",
+        "start_time": "20:00",
+        "end_time": "21:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
+  }
 ]
