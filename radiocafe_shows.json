@@ -193,7 +193,11 @@
                 "expected_live": true
             }
         ],
-        "offline_periods": null
+        "offline_periods":   [{
+            "from": "06-01",
+            "to": "09-31",
+            "reason": "nyári szünet"
+        }]
     },
     {
         "show": "Hellojárat",

@@ -189,6 +189,11 @@
             color: #000;
         }
 
+        .badge-offline {
+            background: #666;
+            color: #fff;
+        }
+
         .no-shows {
             color: #666;
             font-style: italic;
@@ -293,6 +298,33 @@
             'Sunday': 'Vasárnap'
         };
 
+        function isInOfflinePeriod(offlinePeriods) {
+            if (!offlinePeriods || offlinePeriods.length === 0) return null;
+            
+            const now = new Date();
+            const currentYear = now.getFullYear();
+            const currentMonth = now.getMonth() + 1;
+            const currentDay = now.getDate();
+            
+            for (const period of offlinePeriods) {
+                const [fromMonth, fromDay] = period.from.split('-').map(Number);
+                const [toMonth, toDay] = period.to.split('-').map(Number);
+                
+                const fromDate = new Date(currentYear, fromMonth - 1, fromDay);
+                const toDate = new Date(currentYear, toMonth - 1, toDay);
+                const currentDate = new Date(currentYear, currentMonth - 1, currentDay);
+                
+                if (currentDate >= fromDate && currentDate <= toDate) {
+                    return {
+                        reason: period.reason,
+                        endDate: `${currentYear}-${String(toMonth).padStart(2, '0')}-${String(toDay).padStart(2, '0')}`
+                    };
+                }
+            }
+            
+            return null;
+        }
+
         async function loadSchedule() {
             try {
                 const response = await fetch('radiocafe_shows.json');
@@ -345,9 +377,15 @@
                                 ? `${show.time} - ${show.endTime}` 
                                 : show.time;
                             
+                            const offlineInfo = isInOfflinePeriod(show.offline_periods);
+                            
                             let badges = '';
-                            if (show.isLive) {
-                                badges += '<span class="badge badge-live">ÉLŐ</span>';
+                            if (offlineInfo) {
+                                badges += `<span class="badge badge-offline">${offlineInfo.reason} - ${offlineInfo.endDate}-ig</span>`;
+                            } else {
+                                if (show.isLive) {
+                                    badges += '<span class="badge badge-live">ÉLŐ</span>';
+                                }
                             }
                             if (show.is_podcast) {
                                 badges += '<span class="badge badge-podcast">PODCAST</span>';
