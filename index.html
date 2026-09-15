@@ -369,21 +369,24 @@
                 if (!isUserScrolling) return;
                 
                 const sections = document.querySelectorAll('.day-section');
-                const scrollPosition = window.scrollY + 250;
+                const scrollPosition = window.scrollY + window.innerHeight / 2;
                 
-                let currentSection = null;
+                let closestSection = null;
+                let closestDistance = Infinity;
                 
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    const sectionBottom = sectionTop + section.offsetHeight;
+                    const sectionMiddle = sectionTop + (section.offsetHeight / 2);
+                    const distance = Math.abs(scrollPosition - sectionMiddle);
                     
-                    if (scrollPosition >= sectionTop && scrollPosition < sectionBottom) {
-                        currentSection = section;
+                    if (distance < closestDistance) {
+                        closestDistance = distance;
+                        closestSection = section;
                     }
                 });
                 
-                if (currentSection) {
-                    const day = currentSection.id.replace('day-', '');
+                if (closestSection) {
+                    const day = closestSection.id.replace('day-', '');
                     dayButtons.forEach(btn => {
                         if (btn.getAttribute('data-day') === day) {
                             dayButtons.forEach(b => b.classList.remove('active'));
@@ -393,7 +396,11 @@
                 }
             }
 
-            window.addEventListener('scroll', updateActiveButton);
+            let scrollTimeout;
+            window.addEventListener('scroll', () => {
+                clearTimeout(scrollTimeout);
+                scrollTimeout = setTimeout(updateActiveButton, 50);
+            });
             updateActiveButton();
         }
 
