@@ -13,19 +13,33 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            background: #1a1a1a;
+            background: #2d1c17;
             color: #e0e0e0;
-            padding: 20px;
             min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 200px;
+            background: linear-gradient(to bottom, #1a1a1a 0%, #1a1a1a 50%, transparent 100%);
+            pointer-events: none;
+            z-index: 99;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 20px;
         }
 
         header {
-            background: #000;
+            background: rgba(0, 0, 0, 0.98);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             padding: 30px;
             border-radius: 15px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
@@ -85,7 +99,7 @@
             padding: 25px;
             box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
             border: 1px solid #333;
-            scroll-margin-top: 150px;
+            scroll-margin-top: 200px;
         }
 
         .day-title {
@@ -102,13 +116,32 @@
             padding: 15px;
             margin-bottom: 15px;
             border-radius: 8px;
-            transition: transform 0.2s, box-shadow 0.2s;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .show-card:hover {
             transform: translateX(5px);
             box-shadow: 0 3px 10px rgba(255, 107, 53, 0.3);
             background: #222;
+        }
+
+        .show-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .show-card.expanded .show-details {
+            max-height: 500px;
+            margin-top: 12px;
+        }
+
+        .details-toggle {
+            color: #ff6b35;
+            font-size: 0.9rem;
+            margin-top: 8px;
+            display: inline-block;
         }
 
         .show-time {
@@ -164,13 +197,13 @@
         }
 
         @media (max-width: 768px) {
-            body {
-                padding: 10px;
+            .container {
+                padding: 15px;
             }
 
             header {
                 padding: 20px;
-                top: 10px;
+                top: 15px;
             }
 
             h1 {
@@ -178,17 +211,17 @@
             }
 
             .day-selector {
-                gap: 8px;
+                gap: 6px;
             }
 
             .day-btn {
                 padding: 8px 12px;
-                font-size: 0.9rem;
+                font-size: 0.85rem;
             }
 
             .day-section {
                 padding: 15px;
-                scroll-margin-top: 180px;
+                scroll-margin-top: 220px;
             }
 
             .day-title {
@@ -205,17 +238,22 @@
         }
 
         @media (max-width: 480px) {
+            .container {
+                padding: 10px;
+            }
+
+            header {
+                padding: 15px;
+                top: 10px;
+            }
+
             h1 {
                 font-size: 1.3rem;
             }
 
-            .subtitle {
-                font-size: 0.9rem;
-            }
-
             .day-btn {
-                padding: 8px 10px;
-                font-size: 0.85rem;
+                padding: 6px 10px;
+                font-size: 0.8rem;
             }
 
             .show-card {
@@ -322,9 +360,16 @@
                             showCard.innerHTML = `
                                 <div class="show-time">${timeStr}${badges}</div>
                                 <div class="show-title">${show.show}</div>
-                                ${presenters}
-                                <div class="show-description">${show.description_hu}</div>
+                                <div class="details-toggle">Részletek...</div>
+                                <div class="show-details">
+                                    ${presenters}
+                                    <div class="show-description">${show.description_hu}</div>
+                                </div>
                             `;
+                            
+                            showCard.addEventListener('click', () => {
+                                showCard.classList.toggle('expanded');
+                            });
                             
                             daySection.appendChild(showCard);
                         });
