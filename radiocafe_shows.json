@@ -619,5 +619,24 @@
       }
     ],
     "offline_periods": null
+  },
+    {
+    "show": "Duplafarkas",
+    "presenters": [
+      "Urbán Szabolcs",
+      "Bányai Zsolt"
+    ],
+    "description_hu": "",
+    "is_podcast": false,
+    "broadcasts": [
+      {
+        "day": "Monday",
+        "start_time": "21:00",
+        "end_time": "22:00",
+        "is_main_air_time": true,
+        "expected_live": true
+      }
+    ],
+    "offline_periods": null
   }
 ]
